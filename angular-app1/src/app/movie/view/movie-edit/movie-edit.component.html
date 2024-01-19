@@ -1,0 +1,51 @@
+<article *ngIf="movie">
+  <header><h2>Edit movie</h2></header>
+
+  <form class="container"  #form="ngForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="col-4 p-2">
+        <div>
+          <label for="title">Title: </label>
+          <input id="title" name="title" [(ngModel)]="movie.title"/>
+        </div>
+      </div>
+    </div>
+    <br/>
+    <div class="row">
+      <div class="col-4 p-2">
+        <div>
+          <label for="country">Country: </label>
+          <input id="country" name="country" [(ngModel)]="movie.country"/>
+        </div>
+      </div>
+    </div>
+    <br/>
+    <div class="row">
+      <div class="col-4 p-2">
+        <div>
+          <label for="duration">Duration: </label>
+          <input id="duration" name="duration" [(ngModel)]="movie.duration"/>
+        </div>
+      </div>
+    </div>
+    <br/>
+    <div class="row">
+      <div class="col-4 p-2">
+        <div>
+          <label for="year">Release Year: </label>
+          <input id="year" name="year" [(ngModel)]="movie.year"/>
+        </div>
+      </div>
+    </div>
+    <br/>
+    <div class="row">
+      <div class="col-2 p-2">
+        <button type="submit">Update</button>
+      </div>
+      <br/>
+      <div class="col-2 p-2">
+        <button type="button" (click)="form.resetForm(original)">Reset</button>
+      </div>
+    </div>
+  </form>
+</article>

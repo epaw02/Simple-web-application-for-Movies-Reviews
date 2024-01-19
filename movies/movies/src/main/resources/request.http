@@ -1,0 +1,37 @@
+
+###
+# Get Movies
+GET localhost:8082/api/movies
+
+###
+# Get Movie
+GET localhost:8080/api/movies/ab34ddb3-ba83-4515-90d8-aec1df4a609e
+
+###
+# Create Movie
+POST localhost:8058/api/movies
+Content-Type: application/json
+
+{
+  "title": "aaa",
+  "country": "USA",
+  "duration": 194,
+  "year": 1997
+}
+
+###
+# Update Movie
+PUT localhost:8080/api/movies/ab34ddb3-ba83-4515-90d8-aec1df4a609e
+Content-Type: application/json
+
+{
+  "title": "The Godfather",
+  "country": "USA",
+  "duration": 175,
+  "year": 1972
+}
+
+###
+# Delete Movie
+DELETE localhost:8080/api/movies/f26a4f9f-0317-4f63-af17-b4d46677a058
+

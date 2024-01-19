@@ -1,0 +1,35 @@
+<article *ngIf="review" xmlns="http://www.w3.org/1999/html">
+  <header><h2>{{review.username}}</h2></header>
+  <div class="container">
+    <div class="row">
+      <div class="col-4">
+        <div class="row mb-2">
+          <div class="col-6">
+            <strong>Rating</strong>
+          </div>
+          <div class="col-6">
+            <span>{{review.rating}}</span>
+          </div>
+        </div>
+        <br/>
+        <div class="row mb-2">
+          <div class="col-6">
+            <strong>Comment</strong>
+          </div>
+          <div class="col-6">
+            <span>{{review.comment}}</span>
+          </div>
+        </div>
+        <br/>
+        <div class="row mb-2">
+          <div class="col-6">
+            <strong>Movie title </strong>
+          </div>
+          <div class="col-6">
+            <span>{{review.movie.title}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>

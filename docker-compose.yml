@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  review:
+    image: review:latest
+    restart: always
+
+  movies:
+    image: movies10:latest
+    restart: always
+    environment:
+      REVIEW_URL: "http://review:8080/"
+
+  gateway:
+    image: getaway:latest
+    restart: always
+    environment:
+      REVIEW_URL: "http://review:8080/"
+      MOVIES_URL: "http://movies:8080/"
+      GATEWAY_HOST: "getaway:8080"
+
+  angular:
+    image: movies-ang:latest
+    restart: always
+    environment:
+      API_URL: http://gateway:8080/api
+    ports:
+      - "8087:80"

@@ -1,0 +1,63 @@
+<article *ngIf="movie">
+  <header><h2>{{movie.title}}</h2></header>
+  <div class="container">
+    <div class="row">
+      <div class="col-4">
+        <div class="row mb-2">
+          <div class="col-6">
+            <strong>Country</strong>
+          </div>
+          <div class="col-6">
+            <span>{{movie.country}}</span>
+          </div>
+        </div>
+        <div class="row mb-2">
+          <div class="col-6">
+            <strong>Duration</strong>
+          </div>
+          <div class="col-6">
+            <span>{{movie.duration}}</span>
+          </div>
+        </div>
+        <div class="row mb-2">
+          <div class="col-6">
+            <strong>Release Year</strong>
+          </div>
+          <div class="col-6">
+            <span>{{movie.year}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br/>
+  <h3>Reviews</h3>
+    <div class="row">
+      <button [routerLink]="['/movies', movie.id, 'reviews']">Add new review</button>
+    </div>
+    <br/>
+    <table *ngIf="reviews">
+      <thead>
+      <tr>
+        <th>Username</th>
+        <th>View</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let review of reviews.reviews">
+        <td>{{review.username}}</td>
+        <td>
+          <a [routerLink]="['/movies', movie.id, 'reviews', review.id]">View</a>
+        </td>
+        <td>
+          <a [routerLink]="['/movies', movie.id, 'reviews', review.id, 'edit']">Edit</a>
+        </td>
+        <td>
+          <button (click)="onDelete(review)">Delete</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</article>

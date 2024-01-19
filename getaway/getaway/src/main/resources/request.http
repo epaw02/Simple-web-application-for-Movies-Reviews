@@ -1,0 +1,74 @@
+###
+# Get Reviews
+GET localhost:8084/api/reviews
+
+###
+# Get Review by id
+GET localhost:8084/api/reviews/e751be88-a63a-458f-83f1-d4fcf84351c1
+
+###
+#  Get Reviews By Movie
+GET localhost:8084/api/movies/2ff89b35-6860-409e-ab71-4ee5ae6d890e/reviews
+
+###
+# Create Review
+POST localhost:8084/api/movies/b8bff268-6351-4e0d-b7e7-3301b8e28aac/reviews
+Content-Type: application/json
+
+{
+  "username": "anna",
+  "comment": "It was great",
+  "rating": "ONE_STAR"
+}
+
+###
+# Update Review
+PUT localhost:8084/api/reviews/41969470-5372-4be4-bc05-351ecf7fc3e0
+Content-Type: application/json
+
+{
+  "username": "annak12",
+  "comment": "It was not bad",
+  "rating": "THREE_STARS"
+}
+
+###
+# Delete Review
+DELETE localhost:8084/api/reviews/c3464934-e6e7-409d-8459-97a3cf4846f7
+
+###
+# Get Movies
+GET localhost:8084/api/movies
+
+###
+# Get Movie
+GET localhost:8084/api/movies/dbe85e60-a066-48ae-b659-37b0ba38dea5
+
+###
+# Create Movie
+POST localhost:8084/api/movies
+Content-Type: application/json
+
+{
+  "title": "Titanic",
+  "country": "USA",
+  "duration": 194,
+  "year": 1997
+}
+
+###
+# Update Movie
+PUT localhost:8084/api/movies/2fa15362-32e2-4baf-a675-dd0826229fce
+Content-Type: application/json
+
+{
+  "title": "The Godfather",
+  "country": "USA",
+  "duration": 175,
+  "year": 1972
+}
+
+###
+# Delete Movie
+DELETE localhost:8084/api/movies/9760713b-b4c7-4895-ac34-3b6df70ce9a1
+

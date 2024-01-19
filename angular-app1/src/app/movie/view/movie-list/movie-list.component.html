@@ -1,0 +1,31 @@
+<article class="text--justified">
+  <header><h2>Movies</h2></header>
+  <div class="row">
+    <button [routerLink]="['/movie']">Add new movie</button>
+  </div>
+  <br/>
+  <table *ngIf="movies">
+    <thead>
+    <tr>
+      <th>Title</th>
+      <th>View</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let movie of movies.movies">
+      <td>{{movie.title}}</td>
+      <td>
+        <a [routerLink]="['/movies', movie.id]">View</a>
+      </td>
+      <td>
+        <a [routerLink]="['/movies', movie.id, 'edit']">Edit</a>
+      </td>
+      <td>
+        <button (click)="onDelete(movie)">Delete</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</article>

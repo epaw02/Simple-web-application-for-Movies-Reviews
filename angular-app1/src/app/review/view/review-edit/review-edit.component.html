@@ -1,0 +1,42 @@
+<article *ngIf="review">
+  <header><h2>Edit review</h2></header>
+
+  <form class="container"  #form="ngForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="col-4 p-2">
+        <div>
+          <label for="username">Username: </label>
+          <input id="username" name="username" [(ngModel)]="review.username"/>
+        </div>
+      </div>
+    </div>
+    <br/>
+    <div class="row">
+      <div class="col-4 p-2">
+        <div>
+          <label for="rating">Rating: </label>
+          <input id="rating" name="rating" [(ngModel)]="review.rating"/>
+        </div>
+      </div>
+    </div>
+    <br/>
+    <div class="row">
+      <div class="col-4 p-2">
+        <div>
+          <label for="comment">Comment: </label>
+          <textarea id="comment" name="comment" [(ngModel)]="review.comment"></textarea>
+        </div>
+      </div>
+    </div>
+    <br/>
+        <div class="row">
+      <div class="col-2 p-2">
+        <button type="submit">Update</button>
+      </div>
+          <br/>
+      <div class="col-2 p-2">
+        <button type="button" (click)="form.resetForm(original)">Reset</button>
+      </div>
+    </div>
+  </form>
+</article>

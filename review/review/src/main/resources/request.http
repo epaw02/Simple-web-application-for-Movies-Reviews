@@ -1,0 +1,38 @@
+###
+# Get Reviews
+GET localhost:8081/api/reviews
+
+###
+# Get Review by id
+GET localhost:8081/api/reviews/25fe4b6e-8484-4869-88d3-f783654f5005
+
+###
+#  Get Reviews By Movie
+GET localhost:8081/api/movies/7a958469-15d5-471a-ab52-b77ffa4d5cfb/reviews
+
+###
+# Create Review
+POST localhost:8081/api/movies/f26a4f9f-0317-4f63-af17-b4d46677a058/reviews
+Content-Type: application/json
+
+{
+  "username": "joedoe98",
+  "comment": "It was okay",
+  "rating": "FOUR_STARS"
+}
+
+###
+# Update Review
+PUT localhost:8081/api/reviews/c3464934-e6e7-409d-8459-97a3cf4846f7
+Content-Type: application/json
+
+{
+  "username": "joedoe98",
+  "comment": "It was not bad",
+  "rating": "THREE_STARS"
+}
+
+###
+# Delete Review
+DELETE localhost:8081/api/reviews/c3464934-e6e7-409d-8459-97a3cf4846f7
+
