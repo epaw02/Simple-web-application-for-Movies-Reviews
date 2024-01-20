@@ -2,25 +2,31 @@ version: '3'
 
 services:
   review:
-    image: review:latest
+    image: review0:latest
+    ports:
+     - 8081:8080
     restart: always
 
   movies:
-    image: movies10:latest
+    image: movies0011:latest
+    ports:
+     - 8082:8080
     restart: always
     environment:
       REVIEW_URL: "http://review:8080/"
 
   gateway:
-    image: getaway:latest
+    image: xxx:latest
     restart: always
+    ports:
+      - 8080:8080
     environment:
       REVIEW_URL: "http://review:8080/"
       MOVIES_URL: "http://movies:8080/"
       GATEWAY_HOST: "getaway:8080"
 
   angular:
-    image: movies-ang:latest
+    image: angular:latest
     restart: always
     environment:
       API_URL: http://gateway:8080/api

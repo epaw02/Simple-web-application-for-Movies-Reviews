@@ -16,8 +16,7 @@ public class MoviesApplication {
 	}
 
 	@Bean
-	@ConditionalOnProperty(name = "reviews.url")
-	public RestTemplate restTemplate(@Value("${reviews.url}") String baseUrl) {
+	public RestTemplate restTemplate(@Value("http://review:8080") String baseUrl) {
 		return new RestTemplateBuilder().rootUri(baseUrl).build();
 	}
 

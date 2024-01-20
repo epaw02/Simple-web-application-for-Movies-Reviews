@@ -28,7 +28,7 @@ public class GetawayApplication {
                         .path("/api/movies/{id}")
                         .or()
                         .path("/api/movies")
-                        .uri("http://localhost:8082")
+                        .uri("http://movies:8080")
                 )
                 .route("reviews", route -> route
                         .path("/api/reviews")
@@ -36,7 +36,7 @@ public class GetawayApplication {
                         .path("/api/reviews/{id}")
                         .or()
                         .path("/api/movies/{movieId}/reviews")
-						.uri("http://localhost:8081")
+						.uri("http://review:8080")
                 )
                 .build();
     }

@@ -22,7 +22,7 @@ class MovieController {
         this.movieMapper = movieMapper;
     }
 
-    @PutMapping
+    @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     @ResponseBody
     public GetMovieResponseDto createMovie(@RequestBody MovieRequestDto movieRequestDto){

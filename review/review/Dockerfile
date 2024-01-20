@@ -16,6 +16,7 @@ ENV SPRING_JPA_HIBERNATE_DDL_AUTO=update
 ENV SPRING_H2_CONSOLE_enabled=true
 
 EXPOSE 8080
+EXPOSE 8081
 
 COPY target/review-${VERSION}.jar /opt/review/review.jar
 
